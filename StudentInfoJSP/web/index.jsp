@@ -16,13 +16,27 @@
         <title>JSP Page</title>
     </head>
     <body>
+      <table style="width:100%">
+        <tr>
+          <th>Name</th>
+          <th>Adress</th> 
+          <th>Age</th>
+          <th>GPA</th>
+        </tr>
+  
+
         <% 
             ArrayList<Student> stuInfo = new studentController().getStuInfo();
             for(Student stu : stuInfo){
-                out.print("<h1>" + stu.getStudentName() + "</h1>");
-            out.print("<h1>" + stu.getAddress() + "</h1>");
-             out.print("<h1>" + stu.getAge() + "</h1>");
-            }
+                %>
+        <tr style="align-self:  center">
+            <td style="align-self:  center"> <% out.print(stu.getStudentName()); %> </td>
+            <td style="align-content: center"> <% out.print(stu.getAddress()); %> </td>
+            <td style="align-content: center"> <% out.print(stu.getAge()); %> </td>
+            <td style="align-content: center"> <% out.print(stu.getGpa()); %> </td>
+            <%}%>
+        </tr>
+    </table> 
             
 //            
             
